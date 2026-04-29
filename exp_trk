@@ -1,0 +1,100 @@
+import json
+import os
+import csv
+from datetime import datetime
+from pathlib import Path
+
+DATA_FILE = Path(__file__).parent / "expenses.json"
+
+CATEGORIES = [
+    "Food",
+    "Transport",
+    "Housing",
+    "Health",
+    "Entertainment",
+    "Shopping",
+    "Other",
+]
+
+
+def load():
+    if DATA_FILE.exists():
+        with open(DATA_FILE) as file:
+            return json.load(file)
+    return []
+
+
+def save(expenses):
+    with open(DATA_FILE, "w") as file:
+        json.dump(expenses, file, indent=2)
+
+
+def add():
+    print("--ADD EXPENSES--/n")
+    print("Select a category")
+    n = 0
+    for i in CATEGORIES:
+        print(f"{n} {i}")
+        n += 1
+
+    while True:
+        try:
+            category = int(input("Enter (Number): "))
+            if category > 6 or category < 0:
+                print("Invalid number, try again!")
+                continue
+            else:
+                print(f"{CATEGORIES[category]} selected!")
+            break
+        except ValueError:
+            print("Invalid input, try again!")
+
+    while True:
+        description = input("Description: ").strip()
+        if not description:
+            print("Description cannot be empty")
+            continue
+        break
+
+    while True:
+        try:
+            amount = float(input("Amount ($): "))
+            if amount <= 0:
+                print("Amount can't be negative")
+                continue
+            break
+        except ValueError:
+            print("Invalid Amount!")
+
+    while True:
+        date = input(
+            f"Date (YYYY-MM-DD) [today: {datetime.today().strftime('%Y-%m-%d')}]: "
+        ).strip()
+        if not date:
+            date = datetime.today().strftime("%Y-%m-%d")
+            break
+        try:
+            datetime.strptime(date, "%Y-%m-%d")
+            break
+        except ValueError:
+            print("Invalid date format. Please use YYYY-MM-DD.")
+
+    expense = {
+        "ID": int(datetime.now().timestamp() * 1000),
+        "Category": category,
+        "Description": description,
+        "Amount": round(amount, 2),
+        "Date": date,
+    }
+
+    return expense
+
+
+def main():
+    expense = add()
+    expenses = load()
+    expenses.append(expense)
+    save(expenses)
+
+
+main()
