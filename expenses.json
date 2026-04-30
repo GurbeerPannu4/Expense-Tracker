@@ -5,5 +5,117 @@
     "Description": "2",
     "Amount": 3.0,
     "Date": "2021-02-12"
+  },
+  {
+    "ID": 1777505060705,
+    "Category": 1,
+    "Description": "2",
+    "Amount": 2.0,
+    "Date": "2022-01-10"
+  },
+  {
+    "ID": 1777505081327,
+    "Category": 0,
+    "Description": "Burger",
+    "Amount": 5.0,
+    "Date": "2026-04-29"
+  },
+  {
+    "ID": 1777505133025,
+    "Category": 0,
+    "Description": "Pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-29"
+  },
+  {
+    "ID": 1777562334171,
+    "Category": 0,
+    "Description": "Pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777562407212,
+    "Category": 0,
+    "Description": "pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777562436453,
+    "Category": 0,
+    "Description": "pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777562523549,
+    "Category": 0,
+    "Description": "pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777562589260,
+    "Category": 0,
+    "Description": "pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777563390322,
+    "Category": 0,
+    "Description": "pizza",
+    "Amount": 2.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777563477144,
+    "Category": 0,
+    "Description": "Apple",
+    "Amount": 0.5,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777563513105,
+    "Category": 4,
+    "Description": "Netflix",
+    "Amount": 12.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777564236834,
+    "Category": 0,
+    "Description": "Orange",
+    "Amount": 0.5,
+    "Date": "2024-01-12"
+  },
+  {
+    "ID": 1777564307895,
+    "Category": 6,
+    "Description": "Gym",
+    "Amount": 25.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777588356104,
+    "Category": 1,
+    "Description": "Bus fee",
+    "Amount": 5.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777588415347,
+    "Category": 3,
+    "Description": "Medicine",
+    "Amount": 15.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777588456470,
+    "Category": 5,
+    "Description": "Perfume",
+    "Amount": 25.0,
+    "Date": "2026-04-30"
   }
 ]
