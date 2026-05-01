@@ -117,5 +117,75 @@
     "Description": "Perfume",
     "Amount": 25.0,
     "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777589805414,
+    "Category": 0,
+    "Description": "sssdw",
+    "Amount": 1.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777589994071,
+    "Category": 0,
+    "Description": "wereeews",
+    "Amount": 23.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777590055970,
+    "Category": 6,
+    "Description": "wwqq",
+    "Amount": 1.0,
+    "Date": "2026-04-30"
+  },
+  {
+    "ID": 1777647979312,
+    "Category": 6,
+    "Description": "hiking",
+    "Amount": 30.0,
+    "Date": "2026-05-01"
+  },
+  {
+    "ID": 1777648067050,
+    "Category": 0,
+    "Description": "coffee",
+    "Amount": 2.0,
+    "Date": "2026-05-01"
+  },
+  {
+    "ID": 1777648221212,
+    "Category": 0,
+    "Description": "0",
+    "Amount": 4.0,
+    "Date": "2026-05-01"
+  },
+  {
+    "ID": 1777648412312,
+    "Category": 6,
+    "Description": "sdw",
+    "Amount": 1.0,
+    "Date": "2026-05-01"
+  },
+  {
+    "ID": 1777648462002,
+    "Category": 4,
+    "Description": "1sfs",
+    "Amount": 1.0,
+    "Date": "2026-05-01"
+  },
+  {
+    "ID": 1777648945564,
+    "Category": 3,
+    "Description": "1",
+    "Amount": 1.0,
+    "Date": "2026-05-01"
+  },
+  {
+    "ID": 1777648954778,
+    "Category": 4,
+    "Description": "1",
+    "Amount": 1.0,
+    "Date": "2026-05-01"
   }
 ]

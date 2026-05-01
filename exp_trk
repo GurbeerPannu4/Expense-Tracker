@@ -140,7 +140,41 @@ def summary(expenses):
 
     print(f"Total expenses all time:   ${total_expense:.2f}")
     print(f"Total expense this month:  ${total_month:.2f}")
-    print(f"Number of entries: {len(expenses)}")
+    print(f"Number of entries:          {len(expenses)}")
+
+    print("\nExpenses by category:")
+    print("\n#  Category           Amount")
+    print("-----------------------------------")
+    n = 0
+    for i in CATEGORIES:
+        expense_total = 0
+        for j in expenses:
+            if j["Category"] == n:
+                expense_total += j["Amount"]
+        print(f"{n}  {CATEGORIES[n]:<16} ${expense_total:>7.2f}")
+        n += 1
+
+
+def delete(expenses):
+    if not expenses:
+        return
+
+    all_expenses(expenses)
+    sort_by_date = sorted(expenses, key=lambda e: e["Date"], reverse=True)
+    while True:
+        try:
+            i = int(input("\nEnter # to delete (0 to cancel): ")) - 1
+            if i == -1:
+                return
+            elif i >= 0 and i < len(sort_by_date):
+                r = sort_by_date[i]
+                expenses.remove(r)
+                save(expenses)
+                print(f"Deleted: {r['Description']} - ${r['Amount']:.2f}")
+            else:
+                print("Invalid Number")
+        except ValueError:
+            print("Invalid input")
 
 
 def main():
