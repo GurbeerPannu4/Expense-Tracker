@@ -177,13 +177,73 @@ def delete(expenses):
             print("Invalid input")
 
 
+def menu(expenses):
+    print("\nFilter by category:")
+    for i, c in enumerate(CATEGORIES, 1):
+        print(f"{i}  {c}")
+    try:
+        n = int(input("Select (0 for all)")) - 1
+        if n == -1:
+            all_expenses(expenses)
+        elif 0 <= n < len(CATEGORIES):
+            all_expenses(expenses, CATEGORIES[n])
+        else:
+            print("Invalid number")
+    except ValueError:
+        print("Invalid input")
+
+
+def csv(expenses):
+    if not expenses:
+        print("\nNo expenses to export")
+        return
+
+    out = Path(__file__).parent / "expenses_export.csv"
+    with open(out, "w", newline="") as f:
+        writer = csv.DictWriter(
+            f, fieldnames=["id", "date", "desc", "category", "amount"]
+        )
+        writer.writeheader()
+        writer.writerows(sorted(expenses, key=lambda e: e["date"], reverse=True))
+    print(f"✓ Exported {len(expenses)} expenses to {out}")
+
+
 def main():
-    expense = add()
+    print("=" * 40)
+    print("   Personal Expense Tracker")
+    print("=" * 40)
     expenses = load()
-    expenses.append(expense)
-    save(expenses)
-    all_expenses(expenses)
-    summary(expenses)
+
+    while True:
+        print("\nMenu:")
+        print("  1. Add expense")
+        print("  2. List all expenses")
+        print("  3. Filter by category")
+        print("  4. Summary of expense")
+        print("  5. Delete an expense")
+        print("  6. Export to CSV")
+        print("  0. Quit")
+        i = input("\nSelect: ").strip()
+
+        if i == "1":
+            expense = add()
+            if expense:
+                expenses.append(expense)
+                save(expenses)
+        elif i == "2":
+            all_expenses(expenses)
+        elif i == "3":
+            menu(expenses)
+        elif i == "4":
+            summary(expenses)
+        elif i == "5":
+            delete(expenses)
+        elif i == "6":
+            csv(expenses)
+        elif i == "0":
+            print("Quitting")
+        else:
+            print("Invalid choice")
 
 
 if __name__ == "__main__":
